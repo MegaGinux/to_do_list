@@ -25,6 +25,7 @@ def delete_task(task_id):
         del tasks[task_id]
     return redirect(url_for('index'))
 
+
 @app.route('/edit_task/<int:task_id>', methods=['GET', 'POST'])
 def edit_task(task_id):
     if request.method == 'POST':
