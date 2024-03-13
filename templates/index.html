@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <ul>
+        {% for idx, task in tasks %}
+            <li>{{ idx + 1 }}. {{ task['name'] }} - {{ task['priority'] }} 
+                <form action="/delete_task/{{ idx }}" method="post" style="display: inline;">
+                    <button type="submit">Eliminar</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Agregar Tarea</h2>
+    <form action="/add_task" method="post">
+        <input type="text" name="task" placeholder="Ingrese la tarea">
+        <select name="priority">
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+        </select>
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>
