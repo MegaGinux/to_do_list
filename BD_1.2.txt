@@ -1,0 +1,41 @@
+-- Table: categoria
+CREATE TABLE categoria (
+    id int  NOT NULL,
+    catgoria varchar(20)  NOT NULL,
+    CONSTRAINT categoria_pk PRIMARY KEY (id)
+);
+
+-- Table: prioridad
+CREATE TABLE prioridad (
+    id int  NOT NULL,
+    prioridad varchar(20)  NOT NULL,
+    CONSTRAINT prioridad_pk PRIMARY KEY (id)
+);
+
+-- Table: tarea
+CREATE TABLE tarea (
+    id int AUTO_INCREMENT NOT NULL,
+    titulo varchar(20)  ,
+    contenido varchar(255)  ,
+    fecha_inicio date  ,
+  	fecha_fin date  ,
+    hora_inicio time  ,
+    hora_terminada time  ,
+  	tiempo time,
+    activa boolean  ,
+    terminada boolean  ,
+  	eliminada boolean,
+    usuario_id int  ,
+    categoria_id int  ,
+    prioridad_id int  ,
+    CONSTRAINT tarea_pk PRIMARY KEY (id)
+);
+
+-- Table: usuario
+CREATE TABLE usuario (
+    id int AUTO_INCREMENT NOT NULL,
+    usuario varchar(20) ,
+    email varchar(20)  ,
+    contrasena varchar(20)  ,
+    CONSTRAINT usuario_pk PRIMARY KEY (id)
+);
