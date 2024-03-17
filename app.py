@@ -15,7 +15,9 @@ def index():
 def add_task():
     task_name = request.form['task']
     priority = request.form['priority']
-    task = {'name': task_name, 'priority': priority}
+    time = request.form['time']
+    status = request.form['status']
+    task = {'name': task_name, 'priority': priority, 'time': time, 'status': status}
     tasks.append(task)
     return redirect(url_for('index'))
 
@@ -31,8 +33,12 @@ def edit_task(task_id):
     if request.method == 'POST':
         task_name = request.form['task']
         priority = request.form['priority']
+        time = request.form['time']
+        status = request.form['status']
         tasks[task_id]['name'] = task_name
         tasks[task_id]['priority'] = priority
+        tasks[task_id]['time'] = time
+        tasks[task_id]['status'] = status
         return redirect(url_for('index'))
     else:
         task = tasks[task_id] if 0 <= task_id < len(tasks) else None

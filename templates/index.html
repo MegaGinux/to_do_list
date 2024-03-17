@@ -10,7 +10,7 @@
     <h1>Lista de Tareas</h1>
     <ul>
         {% for idx, task in tasks %}
-            <li>{{ idx + 1 }}. {{ task['name'] }} - {{ task['priority'] }} 
+            <li>{{ idx + 1 }}. {{ task['name'] }} - {{ task['priority'] }} - {{ task['time'] }} <!-- Agrega la hora de la tarea -->
                 <form action="/delete_task/{{ idx }}" method="post" style="display: inline;">
                     <button type="submit">Eliminar</button>
                 </form>
@@ -23,13 +23,19 @@
     <h2>Agregar Tarea</h2>
     <form action="/add_task" method="post">
         <input type="text" name="task" placeholder="Ingrese la tarea">
+        <input type="text" name="time" placeholder="Ingrese la hora de la tarea">
         <select name="priority">
             <option value="Alta">Alta</option>
             <option value="Media">Media</option>
             <option value="Baja">Baja</option>
         </select>
+        <!-- Campo de estado agregado -->
+        <select name="status">
+            <option value="Pendiente">Pendiente</option>
+            <option value="En Proceso">En Proceso</option>
+            <option value="Completada">Completada</option>
+        </select>
         <button type="submit">Agregar</button>
     </form>
 </body>
 </html>
-
