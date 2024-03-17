@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Terminados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   
+  </head>
+<body class="no-seleccionable">
+    
+    <nav class="navbar navbar-expand-lg nav-underline navbar-light custom-navbar-bg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+ <img src="C:\Users\MSI CYBORG\Desktop\Clases\ingenieria_de_software\proy_1\icono_tareas.png" class="img-fluid" alt="Icono Tareas" style="max-width: 50px;">        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-light " href="hoy.html">Hoy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="programados.html">Programados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light active" href="terminados.html">Terminados</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+       
+<div class="container-sm mt-3 ">
+    
+   <div class="mb-3">
+      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Filtro">
+      <datalist id="datalistOptions">
+        <option value="Importante">
+        <option value="Muy Importante">
+      </datalist>
+    </div>
+
+    <ul class="list-group mt-3">
+        <li class="list-group-item">
+            <div class="d-flex flex-column">
+                <h5>TITULO</h5>
+                <p>FECHA</p>
+                <p>HORA INICIO - HORA FIN</p>
+                <p>FILTRO</p>
+                <p>DESCRIPCION</p>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="d-flex flex-column">
+                <h5>TARTA</h5>
+                <p>09/03/20240</p>
+                <p>10:30 - 01:30</p>
+                <p>IMPORTANTE</p>
+                <p>Tarta no sólo es un pastel dulce golosina o una chica. Ahora también es el nombre de mi nueva herramienta que hace signos de arte textual . ≧^◡^≦ Puedes pedir Tarty hacer un texto grande y artistico para ti. Lo hará con mucho gusto, y lo que mas - tu texto será ta-a-an largo!.. Ж-D Estas son las cosas que hacen que mi Tarty sea una de las mas dulces y mas GRANDEs herramientas para transformar texto en símbolos.</p>
+            </div>
+        </li>
+    </ul>
+</div>
+      
+<div class="mt-3"></div>
+    
+<div class="d-flex justify-content-end align-items-center fixed-bottom m-3">
+    <a type="button" class="btn btn-dark  rounded-circle" href="agregar.html">+</a>
+</div>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+ <style>
+      .custom-navbar-bg {
+        background-color: #2C3848;
+      }
+    
+     .centrar-botones {
+      text-align: center;
+    }
+    .no-seleccionable {
+  -webkit-user-select: none;/* Chrome  y Safari */ 
+     -moz-user-select: none;/* Firefox */
+      -ms-user-select: none;/* IE 10+ */ 
+          user-select: none;
+    }
+    
+     
+</style>
