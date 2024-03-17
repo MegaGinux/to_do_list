@@ -11,32 +11,42 @@
     <ul>
         {% for task in tasks %}
             <li>{{ task.id }}. {{ task.name }} - {{ task.priority }} - {{ task.time }}
-                <form action="{{ url_for('delete_task', task_id=task.id) }}" method="post" style="display: inline;">
-                    <button type="submit">Eliminar</button>
-                </form>
-                <form action="{{ url_for('edit_task', task_id=task.id) }}" method="get" style="display: inline;">
-                    <button type="submit">Editar</button>
-                </form>
+                <div class="action-buttons">
+                    <form action="{{ url_for('edit_task', task_id=task.id) }}" method="get" style="display: inline;">
+                        <button type="submit">Editar</button>
+                    </form>
+                    <form action="{{ url_for('delete_task', task_id=task.id) }}" method="post" style="display: inline;">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </div>
             </li>
         {% endfor %}
     </ul>
         
     <h2>Agregar Tarea</h2>
     <form action="/add_task" method="post">
-        <input type="text" name="task" placeholder="Ingrese la tarea">
-        <input type="text" name="time" placeholder="Ingrese la hora de la tarea">
-        <select name="priority">
-            <option value="Alta">Alta</option>
-            <option value="Media">Media</option>
-            <option value="Baja">Baja</option>
-        </select>
-        <!-- Campo de estado agregado -->
-        <select name="status">
-            <option value="Pendiente">Pendiente</option>
-            <option value="En Proceso">En Proceso</option>
-            <option value="Completada">Completada</option>
-        </select>
-        <button type="submit">Agregar</button>
+        <table>
+            <tr>
+                <td><input type="text" name="task" placeholder="Ingrese la tarea"></td>
+                <td><input type="text" name="time" placeholder="Ingrese la hora de la tarea"></td>
+                <td>
+                    <select name="priority">
+                        <option value="Alta">Alta</option>
+                        <option value="Media">Media</option>
+                        <option value="Baja">Baja</option>
+                    </select>
+                </td>
+                <!-- Campo de estado agregado -->
+                <td>
+                    <select name="status">
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="En Proceso">En Proceso</option>
+                        <option value="Completada">Completada</option>
+                    </select>
+                </td>
+                <td><button type="submit" class="green-button">Agregar</button></td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>

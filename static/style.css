@@ -1,68 +1,49 @@
+/* Estilo base para toda la página */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
-    color: #333;
+    background-color: #e8f5e9; /* Un verde claro para el fondo de la página */
+    font-family: 'Arial', sans-serif; /* Fuente por defecto */
 }
 
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
+/* Estilo para los títulos */
 h1, h2 {
-    text-align: center;
+    color: #2e7d32; /* Un verde oscuro para los títulos */
+    text-align: center; /* Centrar los títulos */
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+/* Estilo base para botones y campos de texto */
+button, input[type="text"], select {
+    background-color: #4CAF50; /* Color de fondo verde para botones y select */
+    color: white; /* Texto en color blanco */
+    padding: 10px 15px; /* Espaciado interno más generoso */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 5px; /* Margen para evitar que los elementos estén demasiado juntos */
+    cursor: pointer; /* Cursor en forma de mano al pasar sobre el elemento */
+    font-size: 16px; /* Tamaño de fuente más grande para mejor legibilidad */
 }
 
-li {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* Estilo específico para campos de texto */
+input[type="text"] {
+    background-color: white; /* Fondo blanco para los campos de texto */
+    color: black; /* Texto en color negro para mejor contraste */
 }
 
-li form {
-    margin-left: 10px;
+/* Estilo para botones al pasar el mouse */
+button:hover, select:hover {
+    background-color: #45a049; /* Color de fondo ligeramente más oscuro al pasar el mouse */
 }
 
-button {
-    padding: 6px 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+/* Estilo para el botón "Agregar" específicamente */
+.green-button {
+    font-weight: bold; /* Texto en negrita para resaltar el botón "Agregar" */
 }
 
-button:hover {
-    background-color: #555;
+/* Estilos adicionales para la tabla */
+table {
+    margin: 0 auto; /* Centrar la tabla horizontalmente */
+    max-width: 600px; /* Ancho máximo para la tabla */
 }
 
-input[type="text"], select {
-    padding: 8px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 60%;
-}
-
-select {
-    width: 30%;
-}
-
-button[type="submit"] {
-    width: auto;
+td {
+    text-align: center; /* Alinear el texto de las celdas al centro */
 }

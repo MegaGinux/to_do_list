@@ -2,31 +2,102 @@
 <html>
 <head>
     <title>Edit Task</title>
+    <style>
+        body {
+    background-color: #e8f5e9; /* Un verde claro para el fondo de la página */
+    font-family: 'Arial', sans-serif; /* Fuente por defecto */
+}
+
+/* Estilo para los contenedores */
+.container {
+    width: 80%;
+    margin: 20px auto; /* Centrar y dar espacio alrededor del contenedor */
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para el contenedor */
+    border-radius: 8px; /* Bordes redondeados para el contenedor */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave alrededor del contenedor */
+}
+
+/* Estilo para los títulos */
+h2 {
+    color: #2e7d32; /* Un verde oscuro para los títulos */
+    text-align: center; /* Centrar los títulos */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Estilo base para botones, campos de texto y select */
+button, input[type="text"], select {
+    background-color: #4CAF50; /* Color de fondo verde para botones y select */
+    color: white; /* Texto en color blanco */
+    padding: 10px 15px; /* Espaciado interno más generoso */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 5px 0; /* Margen arriba y abajo para evitar que los elementos estén demasiado juntos */
+    cursor: pointer; /* Cursor en forma de mano al pasar sobre el elemento */
+    font-size: 16px; /* Tamaño de fuente más grande para mejor legibilidad */
+    display: block; /* Hacer que los elementos ocupen todo el ancho disponible */
+    width: 95%; /* Ancho ligeramente menor al 100% para considerar el padding */
+    box-sizing: border-box; /* El ancho incluye el padding y border */
+}
+
+/* Estilo específico para campos de texto */
+input[type="text"] {
+    background-color: white; /* Fondo blanco para los campos de texto */
+    color: black; /* Texto en color negro para mejor contraste */
+}
+
+/* Estilo para botones al pasar el mouse */
+button:hover, select:hover {
+    background-color: #45a049; /* Color de fondo ligeramente más oscuro al pasar el mouse */
+}
+
+/* Estilo para el botón de "Update Task" específicamente */
+input[type="submit"] {
+    background-color: #388E3C; /* Un tono de verde diferente para el botón de actualizar */
+    font-weight: bold; /* Texto en negrita para resaltar el botón */
+    margin-top: 20px; /* Espacio adicional arriba del botón */
+}
+
+/* Estilo para las etiquetas */
+label {
+    display: block; /* Hacer que las etiquetas sean en bloque para alinear con los inputs */
+    margin-top: 10px; /* Espacio arriba de las etiquetas */
+}
+    </style>
+        
 </head>
 <body>
-    <h2>Edit Task</h2>
-    <form method="post">
-        <label for="task">Task Name:</label><br>
-        <input type="text" id="task" name="task" value="{{ task['name'] }}"><br><br>
-        
-        <label for="priority">Priority:</label><br>
-        <select id="priority" name="priority">
-            <option value="Alta" {% if task['priority'] == 'Alta' %} selected {% endif %}>Alta</option>
-            <option value="Media" {% if task['priority'] == 'Media' %} selected {% endif %}>Media</option>
-            <option value="Baja" {% if task['priority'] == 'Baja' %} selected {% endif %}>Baja</option>
-        </select><br><br>
-        
-        <label for="time">Time:</label><br>
-        <input type="text" id="time" name="time" value="{{ task['time'] }}"><br><br>
-        
-        <label for="status">Status:</label><br>
-        <select id="status" name="status">
-            <option value="Iniciada" {% if task['status'] == 'Iniciada' %} selected {% endif %}>Iniciada</option>
-            <option value="En proceso" {% if task['status'] == 'En proceso' %} selected {% endif %}>En proceso</option>
-            <option value="Terminada" {% if task['status'] == 'Terminada' %} selected {% endif %}>Terminada</option>
-        </select><br><br>
-        
-        <input type="submit" value="Update Task">
-    </form>
+    <div class="container">
+        <h2>Editar Tarea</h2>
+        <form method="post">
+            <div>
+                <label for="task">Nombe de tarea:</label><br>
+                <input type="text" id="task" name="task" value="{{ task.name }}">
+            </div>
+            <div>
+                <label for="priority">Prioridad:</label><br>
+                <select id="priority" name="priority">
+                    <option value="Alta" {% if task.priority == 'Alta' %} selected {% endif %}>Alta</option>
+                    <option value="Media" {% if task.priority == 'Media' %} selected {% endif %}>Media</option>
+                    <option value="Baja" {% if task.priority == 'Baja' %} selected {% endif %}>Baja</option>
+                </select>
+            </div>
+            <div>
+                <label for="time">Tiempo:</label><br>
+                <input type="text" id="time" name="time" value="{{ task.time }}">
+            </div>
+            <div>
+                <label for="status">Estado:</label><br>
+                <select id="status" name="status">
+                    <option value="Iniciada" {% if task.status == 'Iniciada' %} selected {% endif %}>Iniciada</option>
+                    <option value="En proceso" {% if task.status == 'En proceso' %} selected {% endif %}>En proceso</option>
+                    <option value="Terminada" {% if task.status == 'Terminada' %} selected {% endif %}>Terminada</option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="Actualiza tarea">
+            </div>
+        </form>
+    </div>
 </body>
 </html>
